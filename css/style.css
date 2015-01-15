@@ -1,0 +1,172 @@
+body {
+  overflow: hidden;
+  font-family: "Helvetica Neue", "Hiragino Sans GB", "Hiragino Sans GB W3", "Lantinghei SC", "Microsoft Yahei", Helvetica, Arial, sans-serif;
+}
+
+h1,h2,h3,h4 {
+  color: #00af9d;
+}
+
+ol {
+  padding-left: 1.5em;
+}
+
+img {
+  width: 100%;
+}
+
+.navbar {
+  z-index: 10;
+}
+
+.navbar-green {
+  background-color: #00af9d;
+  color: #fff;
+}
+
+.navbar-green a {
+  color: #fff;
+}
+
+.navbar-brand img {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}
+
+.navbar-toggle {
+  margin-top: 6px;
+  padding-right: 0;
+}
+
+#start-page {
+  position: fixed;
+  top:0;
+  height: 100%;
+  width: 100%;
+  background-color: #00af9d;
+  z-index: 100;
+  opacity: 1;
+  -webkit-transition: 1.5s all;
+}
+
+#start-page.hide {
+  opacity: 0.5;
+}
+
+#start-page img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 40%;
+  margin-bottom: 60%;
+  height: 100px;
+  width: 100px;
+}
+
+#start-page p,
+#start-page h3 {
+  color: #fff;
+  text-align: center;
+}
+
+#fav-route-list,
+#route-1,
+#route-3 {
+  -webkit-transform: translate3D(100%,0,0);
+}
+
+.route-list {
+  position: fixed;
+  top:0;
+  padding-top: 70px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  -webkit-transition: 1s all;
+  -webkit-transform: translate3D(0,0,0);
+}
+
+.route-list h3 {
+  margin-top: 0;
+}
+
+.route-list p{
+  text-align: justify;
+}
+
+.route-list img{
+  margin-bottom: 15px;
+}
+
+.route {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  -webkit-transition: 1s all;
+  -webkit-transform: translate3D(0,0,0);
+}
+
+.baidu-map-container {
+  position: fixed;
+  top:0;
+  padding-top: 50px;
+  height: 60%;
+  width: 100%;
+  -webkit-transition: 1s all;
+}
+
+.baidu-map-container.hiden {
+  top: -60%;
+}
+
+.baidu-map {
+  height: 100%;
+}
+
+.guideline-info {
+  position: fixed;
+  top: 60%;
+  padding-top: 0;
+  height: 40%;
+  width: 100%;
+  overflow: auto;
+  background-color: #fff;
+  padding-bottom: 15px;
+  -webkit-transition: 1s all;
+}
+
+.guideline-info h3 {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.guideline-info article p {
+  text-align: justify;
+  line-height: 1.8em;
+  overflow: hidden;
+  -webkit-transition: 1s height;
+}
+
+.guideline-info img {
+  width: 100%;
+}
+
+.guideline-info .info-hide-link {
+  display: none;
+}
+
+.guideline-info.full {
+  top: 0%;
+  padding-top: 50px;
+  height: 100%;
+}
+
+.guideline-info.full .info-full-link {
+  display: none;
+}
+
+.guideline-info.full .info-hide-link {
+  display: inline-block;
+}

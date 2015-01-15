@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon" href="img/apple/touch-icon-iphone.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/apple/touch-icon-ipad.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/apple/touch-icon-iphone-retina.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/apple/touch-icon-ipad-retina.png">
+  <link rel="apple-touch-startup-image" href="img/apple/iphone-retina-startup.png">
+  <link href="img/apple/apple-touch-startup-image-640x1096.png"
+            media="(device-width: 320px) and (device-height: 568px)
+               and (-webkit-device-pixel-ratio: 2)"
+            rel="apple-touch-startup-image">
+  <link href="img/apple/apple-touch-startup-image-640x920.png"
+            media="(device-width: 320px) and (device-height: 480px)
+               and (-webkit-device-pixel-ratio: 2)"
+            rel="apple-touch-startup-image">
+  <title>方针地图 · Guideline</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/fastclick.js" type="text/javascript" charset="utf-8" ></script>
+  <script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8" ></script>
+  <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8" ></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=hltrmzze066hhHu1GeEe3tqO"></script>
+</head>
+<body>
+<nav class="navbar navbar-green" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <p><span class="glyphicon glyphicon-th pull-right"></span></p>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img src="img/pin_white.png" class="pull-left" alt="brand"> 
+        <p class="pull-left">方针地图</p>
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a id="local-route-list-link"><span class="glyphicon glyphicon-map-marker"></span> 本地方针</a></li>
+        <li><a id="fav-route-list-link"><span class="glyphicon glyphicon-star"></span> 编辑推荐</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-search"></span> 搜索方针</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- <div id="start-page">
+  <img src="img/pin_white.png" alt="">
+  <h3>方针地图 · Guideline</h3>
+  <p>你的路线指南</p>
+</div> -->
+<div id="fav-route-list" class="route-list">
+  <div class="container">
+    <h3 class="text-center"><span class="glyphicon glyphicon-star"></span> 编辑推荐</a></h3>
+    <div class="list-group">
+      <a id="fav-route-1-link" class="list-group-item">
+        <h4 class="text-center"><span class="glyphicon glyphicon-star"></span> 方针：中秋卢沟赏月</h4>
+        <p>从宛平城到卢沟桥，还可以去园博园</p>
+      </a>
+      <a class="list-group-item">
+        <h4 class="text-center"><span class="glyphicon glyphicon-star"></span> 方针：咖啡厅与小吃</h4>
+        <p>你是吃西餐呢还是吃中餐呢？</p>
+      </a>
+      <a id="fav-route-3-link" class="list-group-item">
+        <h4 class="text-center"><span class="glyphicon glyphicon-star"></span> 方针：高额度腐败</h4>
+        <p>手里钱多了实在没地方花啊！来看看这个方针吧</p>
+      </a>
+    </div>
+  </div>
+</div>
+<div id="local-route-list" class="route-list isshow">
+  <div class="container">
+    <h3 class="text-center"><span class="glyphicon glyphicon-map-marker"></span> 本地方针</a></h3>
+    <div class="list-group">
+      <a id="local-route-1-link" class="list-group-item">
+        <h4 class="text-center"><span class="glyphicon glyphicon-star"></span> 方针：市中心一日游</h4>
+        <img src="img/route_1/1.jpg" alt="">
+        <p>这是一套成熟的纵览北京中轴线，体会风土人情的方针</p>
+      </a>
+      <a class="list-group-item">
+        <h4 class="text-center"><span class="glyphicon glyphicon-star"></span> 方针：探访五道口</h4>
+        <p>在这条方针中，把诸多美食产品一网打尽！</p>
+      </a>
+      <a id="local-route-3-link" class="list-group-item">
+        <h4 class="text-center"><span class="glyphicon glyphicon-star"></span> 方针：深入传媒大学</h4>
+        <img src="img/route_3/1.jpg" alt="">
+        <p>想了解传媒大学里的关键地点吗？跟随这条路线吧</p>
+      </a>
+    </div>
+  </div>
+</div>
+<div id="route-1" class="route">
+  <div class="baidu-map-container">
+    <div id="baidu-map-route-1" class="baidu-map"></div>
+  </div>
+  <div class="guideline-info container">
+    <h3 class="text-center"><span class="glyphicon glyphicon-star"></span> 方针：市中心一日游</h3>
+    <p class="text-right"><a class="info-full-link">全屏显示方针</a></p>
+    <p class="text-right"><a class="info-hide-link">查看地图</a></p>
+    <article>
+      <section id="route-1-A">
+        <h4 class="text-center">A. 前门大街</h4>
+        <p><img src="img/route_1/1.jpg" alt="">前门大街是北京非常著名商业街。位于京城中轴线，北起前门月亮湾，南至天桥路口，与天桥南大街相连。明嘉靖二十九年（1550）建外城前是皇帝出城赴天坛、山川坛的御路，建外城后为外城主要南北街道。</p>
+      </section>
+      <section id="route-1-B">
+        <h4 class="text-center">B. 故宫博物院</h4>
+        <p>北京故宫，旧称紫禁城。位于北京中轴线的中心，是明朝的皇宫，占地面积72万平方米，建筑面积约15万平方米，是世界上现存规模最大、保存最为完整的木质结构的宫殿型建筑。</p>
+      </section>
+      <section id="route-1-C">
+        <h4 class="text-center">C. 北海公园</h4>
+        <p>北海公园(Beihai Park)，位于北京市中心区，城内景山西侧，在故宫的西北面，与中海、南海合称三海。属于中国古代皇家园林。</p>
+      </section>
+      <section id="route-1-D">
+        <h4 class="text-center">D. 南锣鼓巷</h4>
+        <p>南锣鼓巷是一条胡同，位于北京中轴线东侧的交道口地区，北起鼓楼东大街，南至平安大街，宽8米，全长787米，与元大都同期建成。是北京最古老的街区之一，至今已有740多年的历史。</p>
+      </section>
+    </article>
+  </div>
+</div>
+<div id="route-3" class="route">
+  <div class="baidu-map-container">
+    <div id="baidu-map-route-3" class="baidu-map"></div>
+  </div>
+  <div class="guideline-info container">
+    <h3 class="text-center"><span class="glyphicon glyphicon-star"></span> 方针：深入传媒大学</h3>
+    <p class="text-right"><a class="info-full-link">全屏显示方针</a></p>
+    <p class="text-right"><a class="info-hide-link">查看地图</a></p>
+    <article>
+      <h4 class="text-center">A. 南门喷泉</h4>
+      <p>这里会不定期的喷出音乐，也搞很多活动</p>
+      <h4 class="text-center">B. 二食堂</h4>
+      <p>这里有很有名的广院肉饼！</p>
+      <h4 class="text-center">C. 钢琴湖</h4>
+      <p>这个湖被设计成钢琴的样子</p>
+      <h4 class="text-center">D. 动画学院</h4>
+      <p>这里就是软件制作者就读的学院啦！</p>
+    </article>
+  </div>
+</div>
+
+  <script src="js/function.js" type="text/javascript" charset="utf-8" ></script>
+</body>
+</html>
